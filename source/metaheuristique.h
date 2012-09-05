@@ -1,25 +1,27 @@
-#ifndef MATEHEURISIQUE_H_
-# define MATEHEURISIQUE_H_
+#ifndef METAHEURISIQUE_H_
+# define METAHEURISIQUE_H_
 
 #include "circuit.h"
+#include <math.h>
 
 class metaheursique
 {
 
   public:
-  metaheuristique();
+  metaheuristique(double tau, double coef_t,
+                  double coef_e, int size);
   ~metaheuristique();
 
   void init_temp();
   void recuit_sim();
 
   private:
-  int temp;
+  double temperature;
   double coef_temp;
   double coef_eq;
   double tau_zero;
-  circuit circuit;
+  circuit *circuit;
 
 };
 
-#endif /* !MATEHEURISIQUE_H_ */
+#endif /* !METAHEURISIQUE_H_ */
