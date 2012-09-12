@@ -16,15 +16,18 @@ public:
   ~circuit();
 
   void invertion();
+  void undo_invert();
   int manhattan();
   int dist(int begin_i, int begin_j,
            int end_i, int end_j);
+
+  int get_size();
 
 private:
   std::vector<int> map;
   int size;
   int last_invert_first;
-  int last_invet_second;
+  int last_invert_second;
 };
 
 #endif //!CIRCUIT_H_
